@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eel Example</title>
+    <script src="eel.js"></script>
+    <script src="Script.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+  <div class="head">
+    <button id="back"><a href="index.html">back</a></button>
+    <h1 class="header">Create Audio Tour</h1>
+  </div>
+      <form class="createform">
+        <lable for="GName">Guide Name:</lable>
+        <br>
+        <input type="text" id="Gname" name="Gname">
+        <br>
+        <label for="LocLAT">Location LAT:</label>
+        <br>
+        <input type="number" step="0.000001" id="LocLAT" name="LocLAT">
+        <br>
+        <label for="LocLON">Location LON:</label>
+        <br>
+        <input type="number" step="0.000001" id="LocLON" name="LocLON">
+        <br>
+        <button type="button" onclick="getPathToFile()">Select File</button>
+        <br>
+        <div>
+          <div id="fileSelected"></div>
+        </div>
+        <button type="button" id="submit" onclick=" sendMain(file)">Create</button>
+      </form>
+
+    <script type="text/javascript" src="../eel.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

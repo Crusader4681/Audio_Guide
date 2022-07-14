@@ -1,0 +1,84 @@
+h1{
+  color: green;
+  text-align: center;
+}
+
+
+.head{
+  display: inline-block;
+
+  border: solid 2px red;
+}
+button{
+  width: auto;
+  display: block;
+  background-color: green ;
+  margin: 5% auto;
+}
+
+.header{
+  background-color: #728639 ;
+  color: black;
+  margin: auto;
+  width: 40%;
+  border: 3px solid black;
+  padding: 10px;
+}
+
+#back{ 
+  float:left;
+  margin-left: 10%;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+
+}
+.header h1{
+  color: black;
+  text-align:center ;
+  margin-left: 50%;
+  margin-top: 0px;
+  float:left
+}
+
+.audioselect{
+  width: auto;
+  display: block;
+  background-color: green ;
+  margin: 20% auto;
+}
+.create{
+
+  margin-bottom: 30%;
+}
+
+body{
+  text-align: center;
+}
+form{
+  display: inline-block;
+
+  text-align: center;
+}
+.createform{
+  margin-top: 20%;
+}
+input {
+  display: inline-block;
+  width: 6em;
+
+  top: -3em;
+}
+
+label {
+  display: inline-block;
+  margin-right: .5em;
+  padding-top: 1.5em;
+}
+
+
+#map{
+    margin: auto;
+    height: 400px;
+    width: 200px;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Eel Example</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="eel.js"></script>
+    <script src="./Script.js"></script>
+
+
+  </head>
+  <body>
+    <h1 class="header">Audio Tour</h1>
+  <select id="select" onchange="selectAudio()">
+      <option>Select Audio tour</option>
+  </select>
+  <h1>Guide</h1>
+  <div id="map"></div>
+  <div id="audioguide">
+  <audio id="myAudio"controls>
+    <!-- place holder -->
+  </audio>
+    <button ><a href="create.html">Create An Audio Tour</a></button>
+    <!--used to check array results-->
+  <form>
+    <label for="LocLON">Location Lat:</label>
+    <br>
+    <input type="number" step="0.000001" id="locLAT" name="LocLAT">
+    <br>
+    <label for="LocLON">Location Lon:</label>
+    <br>
+    <input type="number" step="0.000001" id="locLON" name="LocLON">
+    <button id="userloc" type="button" onclick="getuserloc()">submit location</button>
+
+  </form>
+
+  </body>
+  <script>
+   var marker;
+   var Glocation;
+   var user;
+   var arraylong = new Array;
+    function guideMarker(){
+      console.log(selection)
+      eel.getMarker(selection);
+    }
+    
+    function returnMarker(lat,long){
+    console.log(lat,long)
+ 
+    Glocation = { lat: lat, lng: long};
+    }
+    eel.expose(returnMarker)
+
+    function getuserloc(){
+            console.log("i was here");
+            var latlong = {lat: parseFloat(document.getElementById('locLAT').value), lng: parseFloat(document.getElementById('locLON').value)};
+            console.log(latlong,Glocation)
+            initMap(latlong)
+              console.log("your code is a mess")
+              var x = document.getElementById("myAudio");
+              x.play();
+
+    }
+ 
+    function initMap(loc) {
+        var options = {
+            zoom: 16,
+            center: loc,
+        }
+
+    // new map
+    var map = new 
+    google.maps.Map(document.getElementById('map'), options);
+    //add marker
+
+    var image = {
+    url: "https://cdn-icons-png.flaticon.com/512/70/70770.png",
+    scaledSize: new google.maps.Size (30,30),
+  }
+
+  user = new google.maps.Marker({
+      position: Glocation,
+      map:map,
+      title: "audio guide location",
+  });
+
+
+  marker = new google.maps.Marker({
+            position: map.getCenter(),
+            map:map,
+            icon: image,
+            title: "You",
+          });
+
+
+  }
+</script>
+<script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7ZDczMEJbu4P2300eRFxHgOFE23qidmQ&callback=initMap&v=weekly"
+async>
+</script>
+
+</html>
+
